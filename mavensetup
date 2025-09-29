@@ -1,0 +1,14 @@
+yum install java-1.8.0-openjdk -y
+cd /opt/
+wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.zip
+ll
+unzip  apache-maven-3.9.11-bin.zip
+ll
+mv apache-maven-3.9.11 maven
+cd /etc/profile.d
+vim maven.sh
+export M2_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+chmod 777 maven.sh 
+ source maven.sh
+mvn --version                                     
